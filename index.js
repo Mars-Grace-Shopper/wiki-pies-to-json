@@ -25,10 +25,10 @@ for (let i = 0; i < htmljson.length; i++) {
     tmpThumb = '/default.png'
   }
 
-  if (parsedjson[i].Description == 'Sweet or savory') {
+  if (parsedjson[i].Type == 'Sweet or savory') {
     tmpType = 'Savory or sweet';
   } else {
-    tmpType = parsedjson[i].Description;
+    tmpType = parsedjson[i].Type;
   }
   
 
