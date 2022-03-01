@@ -44,7 +44,7 @@ for (let i = 0; i < htmljson.length; i++) {
     type: tmpType,
     description:parsedjson[i].Description,
     thumbnailurl: tmpThumb,
-    price: Math.floor(Math.random() * (10000 - 100) + 100) / 100, // price between 1.00 and 100.00
+    price: (Math.floor(Math.random() * (10000 - 100) + 100) / 100).toFixed(2), // price between 1.00 and 100.00
     quantity: Math.floor(Math.random() * (100 - 1) + 1),
   }
 
