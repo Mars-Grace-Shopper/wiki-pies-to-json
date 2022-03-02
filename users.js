@@ -60,6 +60,7 @@ const main = async () => {
   const randomStreetSuffix = () => streetSuffixArray[randomInt(0, streetSuffixArray.length)];
   const randomState = () => statesArray[randomInt(0, statesArray.length)];
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+  const uncapitalizeFirstLetter = (string) => string.charAt(0).toLowerCase() + string.slice(1);
   
   
   const randomString = (wordcount, maxchars) => {
@@ -84,12 +85,14 @@ const main = async () => {
     let fName = uniqueName(firstNamePool);
     let lName = uniqueName(lastNamePool);
     let tmpUser = {
-      username: fName + ' ' + lName,
+      username: `${uncapitalizeFirstLetter(fName)}${lName.charAt(0).toLowerCase()}${randomInt(1,99)}`,
+      firstName: fName,
+      lastName: lName,
       password: '123', 
       email: `${fName}${lName}@seed.js`,
       type: 'user',
       streetAddress: `${randomInt(1,999)} ${capitalizeFirstLetter(randomWord())} ${randomStreetSuffix()}`,
-      city: randomWord(),
+      city: capitalizeFirstLetter(randomWord()),
       state: randomState(),
       zipcode: randomInt(10000,99999),
       cardHolderName: fName + ' ' + lName,
